@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 3000;
+const path = require("node:path");
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
 // import routes to the app
 const indexRouter = require("./routes/indexRouter");
